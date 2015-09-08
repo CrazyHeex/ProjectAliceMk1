@@ -1,0 +1,852 @@
+<robot
+  name="ProjectAliceMK1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.000119195375087156 -0.0157789044656495 0.0411895333653365"
+        rpy="0 0 0" />
+      <mass
+        value="2.66643858728005" />
+      <inertia
+        ixx="0.0172055976249923"
+        ixy="5.57614137837625E-06"
+        ixz="2.25059266662667E-05"
+        iyy="0.0255572375396939"
+        iyz="-0.000501645042012258"
+        izz="0.0336808754037521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="BODY">
+    <inertial>
+      <origin
+        xyz="0.0100846161931705 -0.0244524697378098 -0.178418043801631"
+        rpy="0 0 0" />
+      <mass
+        value="3.16681255522397" />
+      <inertia
+        ixx="0.0731477275267557"
+        ixy="9.23200861109144E-06"
+        ixz="5.22579586074346E-05"
+        iyy="0.0701974945201329"
+        iyz="0.00507336235001403"
+        izz="0.0323710637312173" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/BODY.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/BODY.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="B"
+    type="fixed">
+    <origin
+      xyz="-0.0100000000000002 -0.002 0.413"
+      rpy="-6.12303176911189E-17 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="BODY" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="N">
+    <inertial>
+      <origin
+        xyz="5.40128115195057E-17 0.00829896676041131 1.73472347597681E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.00660647120272481" />
+      <inertia
+        ixx="7.92081592604671E-07"
+        ixy="1.07954353230802E-21"
+        ixz="-1.03139203193876E-21"
+        iyy="3.86470504032498E-06"
+        iyz="2.59037197061517E-22"
+        izz="4.20424141191177E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/N.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/N.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="NB"
+    type="revolute">
+    <origin
+      xyz="0.01 0.01 0.047"
+      rpy="1.5708 0 0" />
+    <parent
+      link="BODY" />
+    <child
+      link="N" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.7"
+      upper="1.7"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="H">
+    <inertial>
+      <origin
+        xyz="0.0380827981826153 0.00833340246122224 0.000120029062414235"
+        rpy="0 0 0" />
+      <mass
+        value="0.122862182423399" />
+      <inertia
+        ixx="8.41824081464364E-05"
+        ixy="2.3903839861589E-05"
+        ixz="-6.09680243579906E-07"
+        iyy="0.000121968415687599"
+        iyz="-1.5307577160849E-07"
+        izz="0.000135071955696669" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/H.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/H.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="HN"
+    type="revolute">
+    <origin
+      xyz="0 0.023 0"
+      rpy="1.5708 0.25247 1.5708" />
+    <parent
+      link="N" />
+    <child
+      link="H" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.7"
+      upper="1.7"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="L">
+    <inertial>
+      <origin
+        xyz="0.00312311894777987 0.0127583114507618 0.0430807753239107"
+        rpy="0 0 0" />
+      <mass
+        value="0.280848435262368" />
+      <inertia
+        ixx="0.000522892747527594"
+        ixy="-1.21682332844369E-05"
+        ixz="-3.74729730481462E-06"
+        iyy="0.000560891896611284"
+        iyz="0.00010641144224637"
+        izz="0.000485037776585921" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/L.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/L.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB"
+    type="revolute">
+    <origin
+      xyz="0.118 -0.008 0.002"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="BODY" />
+    <child
+      link="L" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.7"
+      upper="1.7"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="L1">
+    <inertial>
+      <origin
+        xyz="0.00707050151811589 -0.0186145980659129 0.00946712160851853"
+        rpy="0 0 0" />
+      <mass
+        value="0.0492176310374413" />
+      <inertia
+        ixx="4.49552307430234E-05"
+        ixy="4.42867317337908E-06"
+        ixz="-2.55765696666338E-06"
+        iyy="5.29152638339264E-05"
+        iyz="6.92249023439621E-06"
+        izz="3.41163786483833E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/L1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/L1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L1L"
+    type="revolute">
+    <origin
+      xyz="0 0.0002 0.062"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="L" />
+    <child
+      link="L1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.7"
+      upper="1.7"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="L2">
+    <inertial>
+      <origin
+        xyz="0.00130828326676907 -0.000334134693319055 -0.0693381806311685"
+        rpy="0 0 0" />
+      <mass
+        value="0.255675531321022" />
+      <inertia
+        ixx="0.000669217279062944"
+        ixy="6.76554218363837E-06"
+        ixz="1.93938917825187E-05"
+        iyy="0.000676544781503653"
+        iyz="1.24121231752883E-06"
+        izz="0.000229844399725595" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/L2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/L2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L2L1"
+    type="revolute">
+    <origin
+      xyz="0 -0.035 0.0009"
+      rpy="1.5708 0.7854 3.1416" />
+    <parent
+      link="L1" />
+    <child
+      link="L2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.7"
+      upper="1.7"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="L3">
+    <inertial>
+      <origin
+        xyz="0.00126585983548333 -0.0763445185281479 -0.00351247676100125"
+        rpy="0 0 0" />
+      <mass
+        value="0.190673764693956" />
+      <inertia
+        ixx="0.000443832925879756"
+        ixy="-7.87621827706865E-06"
+        ixz="3.69291754118392E-06"
+        iyy="0.000220493922949133"
+        iyz="-6.12819117394335E-05"
+        izz="0.000409027623066019" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/L3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/L3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L3L2"
+    type="revolute">
+    <origin
+      xyz="2.0711E-05 2.0711E-05 -0.143"
+      rpy="1.383 -2.7326E-09 2.3562" />
+    <parent
+      link="L2" />
+    <child
+      link="L3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.7"
+      upper="1.7"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="L4">
+    <inertial>
+      <origin
+        xyz="3.42597254323791E-05 0.00299998785502453 -0.0356516138528017"
+        rpy="0 0 0" />
+      <mass
+        value="0.0188751307919504" />
+      <inertia
+        ixx="1.10083038963009E-05"
+        ixy="-7.88701220663075E-15"
+        ixz="-2.3172766256451E-08"
+        iyy="2.25675284695192E-05"
+        iyz="3.6941718692419E-12"
+        izz="1.17139443809999E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/L4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/L4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L4L3"
+    type="fixed">
+    <origin
+      xyz="-0.000365685483603639 -0.136999999999917 -0.00299999999509093"
+      rpy="1.57079666709171 -1.46392709103127E-08 3.1415926392076" />
+    <parent
+      link="L3" />
+    <child
+      link="L4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="R">
+    <inertial>
+      <origin
+        xyz="0.0024391244200099 0.0125973717062474 -0.0430807753184091"
+        rpy="0 0 0" />
+      <mass
+        value="0.280848435355338" />
+      <inertia
+        ixx="0.000524038816363074"
+        ixy="-9.7631754435996E-06"
+        ixz="4.5955271091978E-06"
+        iyy="0.000560633999402217"
+        iyz="-0.000106211858661981"
+        izz="0.000485925948084733" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/R.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/R.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB"
+    type="revolute">
+    <origin
+      xyz="-0.098 -0.008 0.002"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="BODY" />
+    <child
+      link="R" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.7"
+      upper="1.7"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="R1">
+    <inertial>
+      <origin
+        xyz="-0.00707050153892663 -0.0186145980816828 0.0111671216284073"
+        rpy="0 0 0" />
+      <mass
+        value="0.0492176310137726" />
+      <inertia
+        ixx="4.49543359260989E-05"
+        ixy="-4.42867320487169E-06"
+        ixz="2.55765693477684E-06"
+        iyy="5.2914369075321E-05"
+        iyz="6.92249020202042E-06"
+        izz="3.41163786534899E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/R1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/R1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R1R"
+    type="revolute">
+    <origin
+      xyz="0 -0.0002 -0.062"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="R" />
+    <child
+      link="R1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.7"
+      upper="1.7"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="R2">
+    <inertial>
+      <origin
+        xyz="0.00124996485939038 -5.11550339180045E-05 -0.0693381704739929"
+        rpy="0 0 0" />
+      <mass
+        value="0.255675602662194" />
+      <inertia
+        ixx="0.00066922035414642"
+        ixy="-6.63681424133844E-06"
+        ixz="2.00927317922425E-05"
+        iyy="0.000676584942890874"
+        iyz="-1.34989430799816E-07"
+        izz="0.000229887446950928" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/R2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/R2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R2R1"
+    type="revolute">
+    <origin
+      xyz="0 -0.0335 0.0026"
+      rpy="-1.5708 0.7854 0" />
+    <parent
+      link="R1" />
+    <child
+      link="R2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.7"
+      upper="1.7"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="R3">
+    <inertial>
+      <origin
+        xyz="-0.00171941326253006 -0.0763445185220598 -0.00351247673821359"
+        rpy="0 0 0" />
+      <mass
+        value="0.190673764654408" />
+      <inertia
+        ixx="0.000443832925672718"
+        ixy="7.87621769797846E-06"
+        ixz="-3.69291715921361E-06"
+        iyy="0.000220493922827271"
+        iyz="-6.1281911888552E-05"
+        izz="0.000409027622595689" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/R3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/R3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R3R2"
+    type="revolute">
+    <origin
+      xyz="0.0002 -0.0002 -0.143"
+      rpy="1.383 0 0.7854" />
+    <parent
+      link="R2" />
+    <child
+      link="R3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.7"
+      upper="1.7"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="1"
+      friction="1" />
+    <safety_controller
+      soft_upper="1.5"
+      soft_lower="-1.5"
+      k_velocity="0" />
+  </joint>
+  <link
+    name="R4">
+    <inertial>
+      <origin
+        xyz="3.42602378092752E-05 -0.0102846374665 -0.034267531713011"
+        rpy="0 0 0" />
+      <mass
+        value="0.0188751307919502" />
+      <inertia
+        ixx="1.10083038956365E-05"
+        ixy="-8.49883923828046E-09"
+        ixz="-2.15579766891869E-08"
+        iyy="2.11075817011386E-05"
+        iyz="3.70327023695498E-06"
+        izz="1.31738911500441E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/R4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ProjectAliceMK1/meshes/R4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R4R3"
+    type="fixed">
+    <origin
+      xyz="-8.7868E-05 -0.137 0.003"
+      rpy="-1.1953 0 0" />
+    <parent
+      link="R3" />
+    <child
+      link="R4" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
