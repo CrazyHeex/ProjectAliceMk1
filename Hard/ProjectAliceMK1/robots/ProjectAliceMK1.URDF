@@ -342,14 +342,14 @@
       xyz="0 0 -1" />
     <limit
       lower="-1.7"
-      upper="1.7"
+      upper="0"
       effort="10"
       velocity="1" />
     <dynamics
       damping="1"
       friction="1" />
     <safety_controller
-      soft_upper="1.5"
+      soft_upper="0"
       soft_lower="-1.5"
       k_velocity="0" />
   </joint>
@@ -654,7 +654,7 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-1.7"
+      lower="0"
       upper="1.7"
       effort="10"
       velocity="1" />
@@ -663,7 +663,7 @@
       friction="1" />
     <safety_controller
       soft_upper="1.5"
-      soft_lower="-1.5"
+      soft_lower="0"
       k_velocity="0" />
   </joint>
   <link
